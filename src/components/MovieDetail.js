@@ -21,8 +21,8 @@ const MovieDetail = ({data}) => {
           </View>
           <View style={styles.language_container}>
             <Text style={styles.genre_title}>
-              Language{' '}
-              <IconLanguage name="language" size={16} style={{marginTop: 10}} />
+              Language
+              <IconLanguage name="language" size={12} style={{marginTop: 10}} />
               {data.Language}
             </Text>
           </View>
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   genre_title: {
     fontSize: 16,
     color: colors.primary,
+    marginRight: 15,
   },
   genre: {
     marginRight: 10,

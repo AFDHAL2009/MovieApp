@@ -1,8 +1,9 @@
 import {StyleSheet, Platform, StatusBar} from 'react-native';
+import colors from '../../utils/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.primary,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   title: {

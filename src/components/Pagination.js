@@ -5,24 +5,28 @@ import {
   TouchableWithoutFeedback,
   View,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../utils/colors';
-const MovieCard = ({movies, onSelect}) => {
+const Pagination = ({page, decrement, increment}) => {
   return (
-    <TouchableWithoutFeedback onPress={onSelect}>
-      <View style={styles.container}>
-        <Image style={styles.image} source={{uri: movies.Poster}} />
-        <View style={styles.inner_container}>
-          <Text style={styles.title}>{movies.Title}</Text>
-          <Text style={styles.imdbID}>ImdbID : {movies.imdbID}</Text>
-          <Text style={styles.type}>Type : {movies.Type}</Text>
-          <Text numberOfLines={2} style={styles.year}>
-            Year : {movies.Year}
-          </Text>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 15,
+      }}>
+      {page === 1 ? null : (
+        <TouchableOpacity onPress={decrement}>
+          <Icon name={'skip-previous-circle'} size={30} />
+        </TouchableOpacity>
+      )}
+      <Text style={{alignSelf: 'center'}}>Page {page}</Text>
+      <TouchableOpacity onPress={increment}>
+        <Icon name={'skip-next-circle'} size={30} />
+      </TouchableOpacity>
+    </View>
   );
 };
 const styles = StyleSheet.create({
@@ -54,26 +58,20 @@ const styles = StyleSheet.create({
   genre: {
     marginRight: 5,
     color: 'red',
+    fontSize: 12,
     fontStyle: 'italic',
-    fontSize: 16,
   },
   type: {
     color: 'white',
-    marginVertical: 5,
-    fontSize: 16,
-    fontWeight: 'bold',
+    marginVertical: 10,
   },
   imdbID: {
     color: 'white',
     marginVertical: 5,
-    fontSize: 16,
-    fontWeight: 'bold',
   },
-  year: {
+  brief: {
     color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginVertical: 5,
+    // fontStyle: 'italic',
   },
 });
-export default MovieCard;
+export default Pagination;

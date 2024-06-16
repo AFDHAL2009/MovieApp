@@ -8,6 +8,9 @@ import {
   Text,
 } from 'react-native';
 import colors from '../utils/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+Icon;
 const SearchBar = props => {
   const [searchValue, setSearchValue] = useState('');
 
@@ -28,11 +31,11 @@ const SearchBar = props => {
       <TextInput
         value={searchValue}
         onChangeText={text => changeSearchValue(text)}
-        placeholder="Search by title."
+        placeholder="Search by title..."
         style={styles.input}
       />
       <TouchableOpacity onPress={callSearch} style={styles.button}>
-        <Text style={styles.buttonText}>Search</Text>
+        <Icon name="search" size={30} color={'white'} />
       </TouchableOpacity>
     </View>
   );
