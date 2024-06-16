@@ -13,16 +13,17 @@ import styles from './movieDetails.style';
 import {baseUrl, apiKey} from '../../utils/utils';
 import axios from 'axios';
 const MovieDetails = ({route, navigation}) => {
-  /* 2. Get the param */
-  const {data1} = route.params;
-
+  /* 1. Get the param */
+  const {id} = route.params;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  /* Fetch movie  details by id or ImdbID from api  */
   const fetchByImdbID = async () => {
     try {
       const {data: responseData} = await axios.get(
-        `${baseUrl}?apikey=${apiKey}&i=${data1.imdbID}&type=movie`,
+        `${baseUrl}?apikey=${apiKey}&i=${id}&type=movie`,
       );
       setData(responseData);
       setLoading(false);

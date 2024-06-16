@@ -15,10 +15,10 @@ const MovieCard = ({movies, onSelect}) => {
         <Image style={styles.image} source={{uri: movies.Poster}} />
         <View style={styles.inner_container}>
           <Text style={styles.title}>{movies.Title}</Text>
-          <Text style={styles.imdbID}>imdbID: {movies.imdbID}</Text>
-          <Text style={styles.type}>Type: {movies.Type}</Text>
+          <Text style={styles.imdbID}>ImdbID : {movies.imdbID}</Text>
+          <Text style={styles.type}>Type : {movies.Type}</Text>
           <Text numberOfLines={2} style={styles.brief}>
-            year:{movies.Year}
+            Year : {movies.Year}
           </Text>
         </View>
       </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   },
   type: {
     color: 'white',
-    marginVertical: 5,
+    marginVertical: 10,
   },
   imdbID: {
     color: 'white',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   brief: {
     color: 'white',
-    fontStyle: 'italic',
+    // fontStyle: 'italic',
   },
 });
 export default MovieCard;

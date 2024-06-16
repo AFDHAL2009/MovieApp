@@ -15,25 +15,28 @@ import MovieCard from '../../components/MovieCard';
 import styles from './home.style';
 import {baseUrl, apiKey} from '../../utils/utils';
 const Home = ({navigation}) => {
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [displayList, setDisplayList] = useState([]);
-  const handleMovieDetail = data1 => {
-    navigation.navigate('MovieDetails', {data1});
+  const [moviesList, setMoviesList] = useState([]);
+
+  //Function to handle navigation to second screen(MovieDetails)
+  const handleMovieDetail = id => {
+    navigation.navigate('MovieDetails', {id});
   };
 
+  //Function to render flatlist item
   const renderMovieList = ({item}) => (
-    <MovieCard movies={item} onSelect={() => handleMovieDetail(item)} />
+    <MovieCard movies={item} onSelect={() => handleMovieDetail(item.imdbID)} />
   );
 
+  //Function to fetch data movie from api
   const fetchData = async () => {
     try {
       const {data: responseData} = await axios.get(
         `${baseUrl}?apikey=${apiKey}&s=peace&type=movie`,
       );
-      setData(responseData.Search);
-      setDisplayList(responseData.Search);
+
+      setMoviesList(responseData.Search);
       setLoading(false);
     } catch (err) {
       setError(err.Error);
@@ -42,18 +45,17 @@ const Home = ({navigation}) => {
       setLoading(false);
     }
   };
-
-  const search = async searchValue => {
+  // function to handle search movie by title criteria
+  const search = async title => {
     setLoading(true);
     setError(null);
     try {
       const {data: responseData} = await axios.get(
-        `${baseUrl}?apikey=${apiKey}&s=${searchValue}&type=movie`,
+        `${baseUrl}?apikey=${apiKey}&s=${title}&type=movie`,
       );
       const {Search, Response} = responseData;
       if (Search !== undefined) {
-        setData(responseData.Search);
-        setDisplayList(responseData.Search);
+        setMoviesList(responseData.Search);
         console.log(JSON.stringify(responseData.Search));
       }
       if (Response !== undefined) {
@@ -66,8 +68,8 @@ const Home = ({navigation}) => {
       setLoading(false);
     }
   };
-
-  const reset = async searchValue => {
+  //Function to reset movie list
+  const resetList = async title => {
     fetchData();
   };
 
@@ -79,7 +81,7 @@ const Home = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>Movie application</Text>
-      <SearchBar search={search} reset={reset} />
+      <SearchBar search={search} reset={resetList} />
       {loading && !error ? (
         <ActivityIndicator size="large" />
       ) : error ? (
@@ -88,9 +90,9 @@ const Home = ({navigation}) => {
         </View>
       ) : (
         <FlatList
-          data={displayList}
+          data={moviesList}
           renderItem={renderMovieList}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.imdbID}
         />
       )}
     </SafeAreaView>
