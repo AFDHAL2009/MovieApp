@@ -6,7 +6,7 @@
  This app designed , aimed to display and searach a list of movie by using title criteria.
   </li>
   <li>
-    Movie app was created and designed by [<b>Nejib Afdhal</b>](https://github.com/AFDHAL2009) a react-native mobile developer .
+    Movie app was created and designed by [<b>Nejib Afdhal</b>](https://www.linkedin.com/in/nejib-afdhal-84661b134/)) a react-native mobile developer .
   </li>
    <li>
   The app was developed with two framework react-native:  <b>react-native CLI</b> and <b>Expo snack</b>(https://snack.expo.dev/@afdhal/movie-app)
