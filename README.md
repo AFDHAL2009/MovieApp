@@ -26,7 +26,8 @@
      <td>
       <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/home.png"/>
  </td>
-     <td>
+ <tr>
+       <td>
       <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details.png"/>
  </td>
        <td>
@@ -35,5 +36,6 @@
      <td>
       <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details-ios.png"/>
  </td>
+ </tr>
 </tr>
 </br>
