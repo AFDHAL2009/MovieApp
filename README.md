@@ -17,23 +17,23 @@
 <hr>
 <table>
   <tr>
-  <td>
+  <td> 
    <img  height=80 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/images/logo.png"/>
  </td>
  <td>
-      <img  height=250 with=100 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/splashscreen.jpg"/>
+      <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/splashscreen.jpg"/>
  </td>
      <td>
-      <img  height=250 with=100 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/home.png"/>
+      <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/home.png"/>
  </td>
      <td>
-      <img  height=250 with=100 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details.png"/>
+      <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details.png"/>
  </td>
        <td>
-      <img  height=250 with=100 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/home-ios.png"/>
+      <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/home-ios.png"/>
  </td>
      <td>
-      <img  height=250 with=100 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details-ios.png"/>
+      <img  height=250 width=150 src="https://github.com/AFDHAL2009/MovieApp/blob/master/src/assets/screenshots/details-ios.png"/>
  </td>
 </tr>
 </br>
