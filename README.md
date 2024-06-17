@@ -9,7 +9,7 @@
     Movie app was created and designed by [<b>Nejib Afdhal</b>](https://github.com/AFDHAL2009) a react-native mobile developer .
   </li>
    <li>
-  The app was developed with two framework react-native:  <b>react-native CLI</b> and <b>Expo snack</b(https://snack.expo.dev/@afdhal/movie-app)
+  The app was developed with two framework react-native:  <b>react-native CLI</b> and <b>Expo snack</b>(https://snack.expo.dev/@afdhal/movie-app)
    </li>
   </ul>
 <br>
